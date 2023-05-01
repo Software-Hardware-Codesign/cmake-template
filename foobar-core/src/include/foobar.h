@@ -1,6 +1,8 @@
 #ifndef _FOOBAR_H_
 #define _FOOBAR_H_
 
+#include <stdio.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif

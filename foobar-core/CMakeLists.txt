@@ -14,7 +14,9 @@ set(CMAKE_CXX_COMPILER "${TOOLCHAIN_HOME}/bin/avr-g++")
 set(COMPILER_OPTIONS "-mmcu=${TARGET} -O3")
 
 set(toolchain_headers "${TOOLCHAIN_HOME}/toolchain/include/")
-set(libfoobar "${CMAKE_CURRENT_SOURCE_DIR}/src/libfoo/do_foo.c")
+set(libfoobar "${CMAKE_CURRENT_SOURCE_DIR}/src/libfoo/do_foo.c"
+              "${CMAKE_CURRENT_SOURCE_DIR}/src/libfoo/init_foo.c"  
+              "${CMAKE_CURRENT_SOURCE_DIR}/src/libfoo/destroy_foo.c")
 
 set(headers "${toolchain_headers}"
             "${CMAKE_CURRENT_SOURCE_DIR}/src/include/")

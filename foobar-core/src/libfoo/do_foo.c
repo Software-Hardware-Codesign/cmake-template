@@ -3,7 +3,6 @@
  * @author pavl_g.
  * @copyright Unlicensed license.
  */
-#include <stdio.h>
 #include <foobar.h>
 
 void do_foo() {

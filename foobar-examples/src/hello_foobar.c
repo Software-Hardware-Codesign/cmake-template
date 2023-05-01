@@ -7,6 +7,8 @@
 #include <foobar.h>
 
 int main() {
+    init_foo();
     do_foo();
+    destroy_foo();
     return 0;
 }
