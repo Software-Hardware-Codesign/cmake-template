@@ -1,0 +1,10 @@
+/foobar-core/build
+/foobar-examples/build
+/.vscode
+/avr8-gnu-toolchain-linux_x86_64
+
+# add your toolchains to gitignore
+
+# add your specific build outputs 
+
+# add your other module build outputs

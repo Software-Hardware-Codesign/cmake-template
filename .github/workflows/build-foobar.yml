@@ -1,0 +1,27 @@
+name: Build libfoobar
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v3
+    
+    - name: setup-toolchain
+      run: chmod +rwx ./launch-sandbox-setup.sh && ./launch-sandbox-setup.sh
+      
+    - name: compile-link-assemble libfoobar
+      run: chmod +rwx ./helper-scripts/project-impl/compile-all.sh && ./helper-scripts/project-impl/compile-all.sh
+      
+    - name: compile-link-assemble hello_foobar.c
+      run: |
+        chmod +rwx ./helper-scripts/project-impl/compile-examples.sh  
+        ./helper-scripts/project-impl/compile-examples.sh atmega32 hello_foobar.c
+        ./helper-scripts/project-impl/compile-examples.sh atmega328p hello_foobar.c
+
